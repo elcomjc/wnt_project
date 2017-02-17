@@ -30,6 +30,24 @@ body{
   width: 100%;
   background-color: #bdc3c7;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.header > .left-side {
+  flex: 1 0 auto;
+  text-align: center;
+}
+
+.header > .right-side {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.header .country-flag {
+  float: right;
+  margin-right: 5px;
+  max-width: 70px;
 }
 
 .wnt-city-box > .body {
@@ -57,7 +75,7 @@ body{
 }
 
 .content > .left-side,
-.content > .right-side, {
+.content > .right-side {
   flex: 1 0 auto;
 }
 
@@ -103,4 +121,52 @@ body{
 
 .footer > .left-side > img {
   width: 50px;
+}
+
+
+/*************************Spinner **********************/
+* {margin: 0;padding:0;}
+.mask-loading {
+  width: 100%;
+  background-color: rgba(0, 0, 0, .75);
+}
+.spinner {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
 }
