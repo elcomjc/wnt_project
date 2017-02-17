@@ -5,6 +5,7 @@ import moment from 'moment';
 class City {
   cityName = null;
   cityKey = '';
+  intervalReloadObj = null;
   @observable latitude = null;
   @observable longitude = null;
   @observable temperature = '';
@@ -19,16 +20,19 @@ class City {
   }
 
   @action getDataFromApi () {
-    this.loading = true;
+    var scope = this;
+    scope.loading = true;
     axios.get('http://localhost:5000/api/getDataByCityLatLng?city_key='+this.cityKey)
     .then(action(res => {
       this.time = (moment.unix(res.data.time).format('HH:mm a'));
       this.temperature = parseFloat((res.data.temperature - 32) / 1.8).toFixed(2);
-      this.loading = false;
+      scope.loading = false;
+      scope.intervalReloadObj = null;
     }))
     .catch(function (error) {
-      console.log(error);
-      this.loading = false;
+      console.log(error.response.data.error);
+      scope.loading = false;
+      setInterval(scope.getDataFromApi(), 10000);
     });
   }
 

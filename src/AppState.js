@@ -17,9 +17,9 @@ class AppState {
       this.sendCitiesToRedis().then(() => {
         this.getData();
       });
-      // setTimeout(() => {
-      //   this.getData();
-      // },60000);
+      setTimeout(() => {
+        this.getData();
+      },120000);
     });
   }
 

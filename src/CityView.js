@@ -15,6 +15,21 @@ class CityView extends Component {
           <div className="double-bounce2"></div>
         </div>
       </div>);
+    }else if ((city.temperature === 'NaN' || city.temperature === '' || city.time === 'Invalid date' || city.time === '') && !city.loading ) {
+      body = (<div className="box">
+        <div className="content">
+          <div className="left-side">
+            <h3>No data!</h3>
+          </div>
+        </div>
+      </div>);
+      footer = (<div className="footer">
+        <div className="left-side">
+          <span>No data!</span>
+        </div>
+        <div className="right-side">
+        </div>
+      </div>);
     }else{
       body = (<div className="box">
         <div className="content">
