@@ -22,12 +22,12 @@ class City {
   @action getDataFromApi () {
     var scope = this;
     scope.loading = true;
-    axios.get('https://wnt-project-backend.herokuapp.com/api/getDataByCityLatLng?city_key='+this.cityKey)
+    axios.get(process.env.API_URL+'/getDataByCityLatLng?city_key='+this.cityKey)
     .then(action(res => {
       this.time = (moment.unix(res.data.time).format('HH:mm a'));
       this.temperature = parseFloat((res.data.temperature - 32) / 1.8).toFixed(2);
       scope.loading = false;
-      scope.intervalReloadObj = null;
+      clearInterval(scope.intervalReloadObj);
     }))
     .catch(function (error) {
       console.log(error.response.data.error);

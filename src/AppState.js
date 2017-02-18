@@ -32,7 +32,7 @@ class AppState {
   sendCitiesToRedis () {
     var promises = [];
     this.cities.map((city) => {
-      promises.push(axios.post('https://wnt-project-backend.herokuapp.com/api/cityLatLng',
+      promises.push(axios.post(process.env.API_URL+'/cityLatLng',
                                 {
                                   cityKey: city.cityKey,
                                   lat: city.latitude,
