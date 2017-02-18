@@ -5,7 +5,9 @@ import { observer } from 'mobx-react';
 class CityView extends Component {
   render () {
     const city = this.props.city;
-    let flag_url = require("./assets/"+city.cityKey+".png");
+    let flagUrl = require("./assets/"+city.cityKey+".png");
+    let termometerUrl = require("./assets/termometro.png");
+    let relojUrl = require("./assets/reloj.png");
     let body = '';
     let footer = '';
     if(city.loading){
@@ -38,13 +40,13 @@ class CityView extends Component {
 
           </div>
           <div className="right-side">
-            <img src="./src/assets/termometro.png" />
+            <img src={termometerUrl} />
           </div>
         </div>
       </div>);
       footer = (<div className="footer">
         <div className="left-side">
-          <img src="./src/assets/reloj.png" />
+          <img src={relojUrl} />
         </div>
         <div className="right-side">
           {city.time}
@@ -60,7 +62,7 @@ class CityView extends Component {
             </h1>
           </div>
           <div className="right-side">
-            <img className="country-flag" src={flag_url} />
+            <img className="country-flag" src={flagUrl} />
           </div>
         </div>
         <div className="body">
