@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node build.js",
     "build:html": "node buildHtml.js",
-    "start": "node build.js & node buildHtml.js & node publicServer.js",
+    "start": "node build.js && node buildHtml.js && node publicServer.js",
     "lint": "eslint src"
   },
   "repository": {
