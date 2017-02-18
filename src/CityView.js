@@ -5,7 +5,7 @@ import { observer } from 'mobx-react';
 class CityView extends Component {
   render () {
     const city = this.props.city;
-    let flag_url = "./src/assets/"+city.cityKey+".png";
+    let flag_url = require("./assets/"+city.cityKey+".png");
     let body = '';
     let footer = '';
     if(city.loading){
