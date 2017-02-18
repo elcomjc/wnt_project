@@ -23,7 +23,7 @@
     "url": "https://github.com/mobxjs/mobx/issues"
   },
   "homepage": "http://mobxjs.github.com/mobx",
-  "devDependencies": {
+  "dependencies": {
     "axios": "^0.15.3",
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.1.0",
@@ -38,9 +38,7 @@
     "react-hot-loader": "^3.0.0-beta.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^1.14.1",
     "bootstrap-material-design": "^0.5.10",
     "mobx": "^3.0.0",
     "mobx-react": "^4.1.0",
